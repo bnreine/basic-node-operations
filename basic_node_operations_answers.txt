@@ -1,0 +1,231 @@
+Exercises
+
+Create a file called basic_node_operations_answers.txt.
+Put the answers to numbers 1, 2 and 6 in the file.
+Submit bash.js, commands.js and basic_node_operations_answers.txt.
+
+Questions
+
+1. Run the commands sort, wc and uniq on the commands.js file.
+Explain how they work and what the output was.
+
+Sort---->
+
+Output (between stars):
+
+*********************************************************
+done(data);
+if (err) throw err;
+//we will add the functionality of echo next within the object commandLibrary
+break;
+break;
+commandLibrary.cat(userInputArray.slice(1));
+commandLibrary.echo(userInputArray.slice(1).join(" "));
+});
+const fileName = fullPath[0];
+done(userInput);
+fs.readFile(fileName, (err, data) => {
+case "cat":
+case "echo":
+process.stdout.write('\nprompt > ');
+process.stdout.write(output);
+//the echo command
+}
+const command = userInputArray[0];
+const userInputArray = userInput.split(" ");
+switch (command) {
+"cat": function(fullPath) {
+"echo": function(userInput) {
+//parses the user input to understand which command was typed
+}
+},
+
+
+
+
+
+
+
+//where we will store our commands
+//where we will store the logic of our commands
+//write out data
+}
+}
+};
+const commandLibrary = {
+const fs = require("fs");
+function done(output) {
+function evaluateCmd(userInput) {
+module.exports.commandLibrary = commandLibrary;
+module.exports.evaluateCmd = evaluateCmd;
+***************************************************************
+
+
+
+Description: This separates the entire file into an array of strings at each
+carriage return. It then sorts each string array element by looking at the
+first character and establishing the following hierarchy:
+
+Hierarchy: space, carriage return, forward slash, end brace, letters in descending order
+through alphabet.
+
+Additionally, for tie-breakers:
+
+If it compares the same letter, the lowercase comes first (eg. a then A)
+If it compares the same first letter AND case, then it finds the first
+difference in the two strings and re-evaluates at that character (or lack thereof)
+
+
+
+
+
+
+
+
+
+WC----->
+
+Output:
+
+44  116 1108 commands.js
+
+
+Description: Prints newline count, word count, byte count, and file name. It
+gets the number of newlines by counting the carriage return character ascii codes.
+It gets the word counts by finding the number of contiguous character pieces that
+are either separated by spaces or carriage returns.  It gets the byte count by counting
+how many characters there are.  Each character is one byte.
+
+
+
+
+uniq------>
+
+Output (between stars):
+
+*****************************************************
+const fs = require("fs");
+
+//write out data
+function done(output) {
+    process.stdout.write(output);
+    process.stdout.write('\nprompt > ');
+}
+
+//where we will store our commands
+function evaluateCmd(userInput) {
+ //parses the user input to understand which command was typed
+  const userInputArray = userInput.split(" ");
+  const command = userInputArray[0];
+
+  switch (command) {
+    case "echo":
+      //we will add the functionality of echo next within the object commandLibrary
+      commandLibrary.echo(userInputArray.slice(1).join(" "));
+      break;
+    case "cat":
+      commandLibrary.cat(userInputArray.slice(1));
+      break;
+  }
+}
+
+//where we will store the logic of our commands
+const commandLibrary = {
+  //the echo command
+ "echo": function(userInput) {
+     done(userInput);
+ },
+
+ "cat": function(fullPath) {
+     const fileName = fullPath[0];
+     fs.readFile(fileName, (err, data) => {
+         if (err) throw err;
+         done(data);
+     });
+ }
+
+};
+
+module.exports.commandLibrary = commandLibrary;
+module.exports.evaluateCmd = evaluateCmd;
+**********************************************************
+
+Description: This removes adjacent exact replicas.
+
+
+
+2. Using the pipe (|) connect at least two commands and run it on
+commands.js. Explain what the output was and why the specific data was outputted.
+
+sort commands.js | uniq
+
+
+Output (between stars):
+
+********************************************************
+done(data);
+if (err) throw err;
+//we will add the functionality of echo next within the object commandLibrary
+break;
+commandLibrary.cat(userInputArray.slice(1));
+commandLibrary.echo(userInputArray.slice(1).join(" "));
+});
+const fileName = fullPath[0];
+done(userInput);
+fs.readFile(fileName, (err, data) => {
+case "cat":
+case "echo":
+process.stdout.write('\nprompt > ');
+process.stdout.write(output);
+//the echo command
+}
+const command = userInputArray[0];
+const userInputArray = userInput.split(" ");
+switch (command) {
+"cat": function(fullPath) {
+"echo": function(userInput) {
+//parses the user input to understand which command was typed
+}
+},
+
+//where we will store our commands
+//where we will store the logic of our commands
+//write out data
+}
+};
+const commandLibrary = {
+const fs = require("fs");
+function done(output) {
+function evaluateCmd(userInput) {
+module.exports.commandLibrary = commandLibrary;
+module.exports.evaluateCmd = evaluateCmd;
+*********************************************************************
+
+
+
+
+This first sorts the text in commands.js and then pipes it to uniq which then
+removes adjacent exact duplicates.
+
+
+
+
+
+6.
+
+const entry = "Hello there my name is Ben";
+
+function reverseString(entry) {
+  const wordList = entry.split(" ");
+  var newWordList=[];
+  wordList.forEach( word => {
+    var characterList = word.split("");
+    characterList.reverse();
+    word = characterList.join("");
+    newWordList.push(word);
+  });
+  const newEntry = newWordList.join(" ");
+  return newEntry;
+}
+
+reverseString(entry);
